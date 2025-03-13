@@ -1,3 +1,4 @@
-h1{
-    color: blue;
+table,td, caption{
+    border: 1px solid black;
+    border-collapse: collapse;
 }
