@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Historia Internet e Web - ATV 2</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body >
+  <hr>
+  <div id="Atv2">
+    <h1><em>Atividade 2</em></h1>
+    <hr>
+    <h4> HTTP é a sigla para Hypertext Transfer Protocol, ou Protocolo de Transferência de Hipertexto
+      o protocolo é utilizado para a tranferência de arquivos entre cliente e servidor na web por meio
+      de requisições e respostas.
+    </h4>
+    <ol>
+      <li>Um navegador envia uma solicitação HTTP para a web</li>
+      <li>Um servidor web recebe a solicitação</li>
+      <li>O servidor executa um aplicativo para processar a solicitação</li>
+      <li>O servidor retorna uma resposta HTTP (saída) para o navegador</li>
+      <li>O navegador recebe a resposta</li>
+    </ol>
+
+
+
+    <ul>
+      <caption>Principais Métodos HTTP</caption>
+      <li>GET</li>
+      <li>POST</li>
+      <li>PUT</li>
+      <li>HEAD</li>
+      <li>DELETE</li>
+      <li>PATCH</li>
+      <li>OPTIONS</li>
+      <li>CONNECT</li>
+      <li>TRACE</li>
+    </ul>
+
+
+    <ul>
+      <caption> Exemplo de Requisição Utilizando Método GET </caption>
+      <li>GET /index.html HTTP/1.1</li>
+      <li>Host: www.exemplo.com</li>
+      <li>User-Agent: Google/5.0</li>
+    </ul>
+    <hr>
+    <ul>
+      <caption> Cabeçalho de Requisição </caption>
+
+      <h4>Um request HTTP contém vários campos que definem a ação que o cliente deseja realizar.</h4>
+
+      <li>Content-Type: Define o tipo de dado enviado.</li>
+      <li>Authorization: Token para autenticação.</li>
+      <li>Accept: Tipo de resposta aceita.</li>
+      <li>User-Agent: Identifica o cliente.</li>
+      <li>Accept-Language: Preferência de idioma.</li>
+    </ul>
+    <hr>
+    <ul>
+      <caption> Cabeçalho de Response </caption>
+
+      <h4>A resposta HTTP traz a informação retornada pelo servidor após processar o request</h4>
+
+      <li>Content-Type: Tipo do dado retornado</li>
+      <li>Cache-Control: Política de cache.</li>
+      <li>Set-Cookie: Define cookies.</li>
+      <li>ETag: Identificador para controle de cache.</li>
+    </ul>
+
+    <img src="./imagens/Requisição Cliente Servidor01.png" alt=""> <br>
+    <p><span style="color: brown;"> <i>Exemplo de Requisição</i> </span></p>
+    <img src="./imagens/Requisição Cliente Servidor.png" alt="">
+    <p><span style="color: brown;"> <i>Exemplo Response</i> </span></p>
+
+  </div>
+</body>
+
+</html>

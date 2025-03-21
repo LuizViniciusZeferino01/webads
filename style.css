@@ -1,0 +1,54 @@
+#historia{
+    background-color: aqua;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#Atv2{
+    background-color: aqua;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#Atv3{
+    background-color: aqua;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#Atv4{
+    background-color: aqua;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#atv4Part2{
+    background-color: aqua;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1{
+    color: black;
+}
+
+#table3{
+    border: 5px;
+    padding: 5px;
+    border-color: black;
+}
+
+#table4{
+    border: 5px;
+    padding: 5px;
+    border-color: black;
+}
+
+#formulario4atv2{
+    border-radius: 10px;
+    background-color: bisque;
+}
+
+caption{
+    font-size: 20px;
+}
+
+a:hover{
+    background-color: rgb(46, 53, 31);
+    font-size: 18px;
+}
