@@ -1,0 +1,38 @@
+#item1{
+    font-size: 12px;
+    font-family: 'Times New Roman', Times, serif;
+    color: aqua;
+
+}
+
+#item2{
+    font-size: 15px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: black;
+}
+
+#item3{
+    font-size: 6px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: brown;
+}
+
+#item4{
+    font-size: 22px;
+    font-family:  Arial, Helvetica, sans-serif;
+    color: blanchedalmond;
+}
+
+#item5{
+    font-size: 18px;
+    font-family:'Courier New', Courier, monospace;
+    color: chartreuse;
+}
+
+span{
+    font-style: italic;
+    font-size: 28px;
+    color: rgb(rgb(192, 137, 137), rgb(11, 230, 11), rgb(52, 92, 6));
+    display: inline-block;
+    transform: rotate(180deg);
+}
