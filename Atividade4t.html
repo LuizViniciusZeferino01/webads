@@ -1,47 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atividade 4</title>
-
-    <style>
-
-        Define a cor vermelha par todos os elementos <li>
-
-        Atribui a cor verde aos elementos com classe churras
-
-        Estabelece a cor cinza para os elementos com classe fruta
-
-        Deixa cor preta para o <li> que segue outro <li> e tem classe churras
-
-        Configura a cor mgenta para os elementos churras com o atributo draggable="true"
-
-        Especifica a cor azul para os elementos com os ids lip1, lip2 e lip3
-
-        Coloca a cor laranja no elemento com o id lip3 e classe fruta
-
-        Ajusta a cor roxa no <li> denro de <ol> com classe churras e ID lip5
-
-    </style>
-
-
+<head>   
+   <title>Exemplo especificidade de seletores</title>
+   <style>
+      /*regra 1*/ li{color:red;} 
+      /*regra 2*/ .churras{color:green;}
+      /*regra 3*/ .fruta{color:gray}
+      /*regra 4*/ li+li.churras{color: black;}
+      /*regra 5*/ .churras[draggable="true"]{color: magenta;}
+      /*regra 6*/ #lip1,#lip2,#lip3{color:blue}
+      /*regra 7*/ #lip3.fruta{color:orange}
+      /*regra 8*/ ol>li.churras#lip5{color:purple}
+   </style>
 </head>
-<body>
-    Define a cor vermelha para todos os itens da lista <li>s
-
-    Atribui a cor verde aos itens com classe churras.
-
-    Deixa a cor cinza para os itens com classe fruta
-
-    Determina a cor pretax para o item <li> que segue outro <li> e possui a classe churras.
-
-    Configura a cor magenta para o item churras que tem o atributo draggable="true"
-
-    Especifica a cor azul para os itens com os id lip1, lip2 e lip3
-
-    Coloca a cor laranja no item com o id lip3 e a classe fruta.
-
-    Ajusta a cor roxa no item <li> dentro de <ol> com a classe churras e o ID lip5
+<body>   
+   <ol>
+   <!--item 1--><li id="lip0">Abacaxi <!-- Resultado: Vermelho --></li>
+   <!--item 2--><li           class="fruta">Melão <!-- Resultado: Cinza --></li>
+   <!--item 3--><li id="lip2" class="fruta">Pera <!-- Resultado: Azul --></li>
+   <!--item 4--><li id="lip3" class="fruta">Uva <!-- Resultado: Laranja --></li>
+   <!--item 5--><li id="lip4" class="fruta">Maçã <!-- Resultado: Cinza --></li>
+   <!--item 6--><li           class="churras">Carne <!-- Resultado: Verde --></li>
+   <!--item 7--><li           class="churras">Linguiça <!-- Resultado: Verde --></li>
+   <!--item 8--><li id="lip7" class="churras" draggable="true">Pão de alho <!-- Resultado: Magenta --></li>
+   </ol>   
 </body>
 </html>
