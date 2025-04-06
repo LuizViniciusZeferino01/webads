@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Grid Layout</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #f0f0f0;
+      padding: 20px;
+      font-family: sans-serif;
+    }
+
+    .grid {
+      display: grid;
+      gap: 10px;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-areas:
+        "um um um"
+        "dois tres quatro"
+        "cinco tres seis"
+        "cinco sete sete";
+      position: relative;
+      width: 700px;
+      margin: auto;
+    }
+
+    .grid div {
+      padding: 30px;
+      font-weight: bold;
+      font-size: 20px;
+      border-radius: 10px;
+      text-align: center;
+      color: black;
+    }
+
+    .um     { grid-area: um;     background: #ffd67b; }
+    .dois   { grid-area: dois;   background: #f5537d; }
+    .tres   { grid-area: tres;   background: #ffd67b; }
+    .quatro { grid-area: quatro; background: #f5537d; }
+    .cinco  { 
+      grid-area: cinco; 
+      background: #ffd67b;
+    }
+    .seis   { grid-area: seis;   background: #f5537d; }
+    .sete   { grid-area: sete;   background: #ffd67b; }
+
+  </style>
+</head>
+<body>
+
+  <div class="grid">
+    <div class="um">1</div>
+    <div class="dois">2</div>
+    <div class="tres">3</div>
+    <div class="quatro">4</div>
+    <div class="cinco">5</div>
+    <div class="seis">6</div>
+    <div class="sete">7</div>
+  </div>
+
+</body>
+</html>

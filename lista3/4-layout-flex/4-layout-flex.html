@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Layout Flexbox</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100vh;
+      width: 100vw;
+      font-family: sans-serif;
+    }
+
+    .tela {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      background: black;
+    }
+
+    .topo {
+      height: 60px;
+      background: #222;
+      display: flex;
+      align-items: center;
+      padding: 10px;
+    }
+
+    .bolas {
+      display: flex;
+      gap: 10px;
+    }
+
+    .bolas div {
+      width: 20px;
+      height: 20px;
+      background: turquoise;
+      border-radius: 50%;
+    }
+
+    .principal {
+      flex: 1;
+      display: flex;
+    }
+
+    .navegacao {
+      width: 120px;
+      background: #f58220;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      writing-mode: vertical-lr;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .conteudo {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cabecalho {
+      height: 60px;
+      background: #00b0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-weight: bold;
+    }
+
+    .meio {
+      flex: 1;
+      background: #5f4bb6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-weight: bold;
+    }
+
+    .rodape {
+      height: 60px;
+      background: #00b0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="tela">
+    <div class="topo">
+      <div class="bolas">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <div class="principal">
+      <div class="navegacao">NAVEGAÇÃO</div>
+      <div class="conteudo">
+        <div class="cabecalho">CABEÇALHO</div>
+        <div class="meio">CONTEÚDO</div>
+        <div class="rodape">RODAPÉ</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

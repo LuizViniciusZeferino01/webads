@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .container {
+      display: grid;
+      grid-template-areas:
+        "header header header"
+        "left banner right"
+        "left main right"
+        "left low right"
+        "footer footer footer";
+      grid-template-columns: 1fr 3fr 1fr;
+      height: 100vh;
+    }
+
+    .header { grid-area: header; background: orange; }
+    .banner { grid-area: banner; background: red; }
+    .left { grid-area: left; background: green; }
+    .right { grid-area: right; background: yellow; }
+    .main { grid-area: main; background: blue; }
+    .low { grid-area: low; background: lightgreen; }
+    .footer { grid-area: footer; background: darkblue; }
+
+    div {
+      padding: 10px;
+      color: white;
+      text-align: center;
+    }
+
+    @media screen and (max-width: 600px) {
+      .container {
+        grid-template-areas:
+          "header"
+          "banner"
+          "left"
+          "main"
+          "right"
+          "low"
+          "footer";
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">Header</div>
+    <div class="banner">Banner</div>
+    <div class="left">Left</div>
+    <div class="main">Main</div>
+    <div class="right">Right</div>
+    <div class="low">Low</div>
+    <div class="footer">Footer</div>
+  </div>
+
+</body>
+</html>

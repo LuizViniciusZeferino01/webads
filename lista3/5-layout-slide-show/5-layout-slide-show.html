@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Galeria com Hover</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f2f2f2;
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .galeria {
+      display: flex;
+      gap: 10px;
+      width: 90%;
+      height: 400px;
+    }
+
+    .item {
+      flex: 1;
+      border-radius: 30px;
+      overflow: hidden;
+      transition: flex 0.5s ease;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .item:hover {
+      flex: 3;
+    }
+
+    .item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .info {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      color: white;
+      text-shadow: 1px 1px 3px black;
+    }
+
+    .info h4 {
+      font-size: 16px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="galeria">
+    <div class="item">
+      <img src="https://picsum.photos/id/1015/400/400" alt="Montanha">
+      <div class="info">
+        <h4>Montanha</h4>
+      </div>
+    </div>
+    <div class="item">
+      <img src="https://picsum.photos/id/1018/400/400" alt="Mato Bonito">
+      <div class="info">
+        <h4>Mato Bonito</h4>
+      </div>
+    </div>
+    <div class="item">
+      <img src="https://picsum.photos/id/1002/400/400" alt="Praia">
+      <div class="info">
+        <h4>Praia</h4>
+      </div>
+    </div>
+    <div class="item">
+      <img src="https://picsum.photos/id/1022/400/400" alt="Mato">
+      <div class="info">
+        <h4>Mato</h4>
+      </div>
+    </div>
+    <div class="item">
+      <img src="https://picsum.photos/id/1016/400/400" alt="Deserto">
+      <div class="info">
+        <h4>Deserto</h4>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
