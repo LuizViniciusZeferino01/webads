@@ -1,0 +1,105 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding-bottom: 70px;
+  }
+
+  .caixa-chat {
+    width: 400px;
+    margin: 0 auto;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    padding-bottom: 80px;
+    min-height: 100vh;
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  .bolha {
+    clear: both;
+    margin: 15px 0;
+  }
+
+  .bolha .nome {
+    font-size: 0.85em;
+    color: gray;
+    margin-bottom: 3px;
+  }
+
+  .mensagem-esquerda,
+  .mensagem-direita {
+    display: flex;
+    align-items: center;
+  }
+
+  .mensagem-esquerda {
+    justify-content: flex-start;
+  }
+
+  .mensagem-direita {
+    justify-content: flex-end;
+  }
+
+  .texto-msg {
+    padding: 10px 10px 20px 10px;
+    border-radius: 10px;
+    max-width: 70%;
+    position: relative;
+  }
+
+  .mensagem-esquerda .texto-msg {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    margin-left: 10px;
+  }
+
+  .mensagem-direita .texto-msg {
+    background-color: #d4f8cc;
+    border: 1px solid #b6e6ac;
+    margin-right: 10px;
+    text-align: right;
+  }
+
+  .avatar {
+    width: 30px;
+    height: 30px;
+  }
+
+  .tempo {
+    font-size: 0.75em;
+    color: gray;
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+  }
+
+  .campo-envio {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+    background-color: #fff;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .campo-envio input[type="text"] {
+    width: 75%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .campo-envio input[type="submit"] {
+    padding: 10px;
+    border: none;
+    background-color: #4caf50;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+  }
