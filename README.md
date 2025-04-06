@@ -1,3 +1,3 @@
-## Atividades da Lista 3 
+## Atividades da matéria de Programação para internet - IFSC
 
-- Nessa pasta possui exercicios da lista 3 separados em subpastas. 
+- Esse repositório tem as atividades realizadas sobre programação para internet 
