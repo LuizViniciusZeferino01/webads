@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Produtos</title>
+  <style>
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .titulo {
+      background-color: coral;
+      padding: 10px 20px;
+      text-align: center;
+      }
+
+    h1 {
+      text-align: center;
+    }
+
+    .lista-produtos {
+      display: flex;             /* Ativa o Flexbox */
+      flex-wrap: wrap;           /* Permite que os itens quebrem de linha */
+      gap: 16px;                 /* Espaçamento entre os produtos */
+      justify-content: center;   /* Centraliza os produtos na linha */
+    }
+
+    .produto {
+      background-color: #f4f4f4;
+      border: 1px solid #ccc;   /* Borda fina cinza clara ao redor da caixa */
+      border-radius: 8px;          /* Cantos arredondados */
+      padding: 10px;              /* Espaço interno entre o conteúdo e a borda */
+      width: 200px;              /* Largura fixa (ajustável) */
+      text-align: center;
+    }
+
+    .produto:hover {
+      transform: scale(1.03);    /* Efeito de zoom leve ao passar o mouse */
+    }
+
+
+    .produto h3 {
+      margin: 10px 0 5px;
+    }
+
+    .produto p {
+      margin: 5px 0;
+    }
+
+    /* Responsivo: em telas pequenas */
+    @media (max-width: 500px) {
+      .produto {
+        width: 100%; /* Ocupa toda a largura disponível */
+      }
+    }
+  </style>
+</head>
+<body>
+
+    <div class="titulo">
+        <h1>Lista de Produtos</h1>
+    </div>
+
+  <div class="lista-produtos">
+    <div class="produto">
+      <h3>Produto 1</h3>
+      <p>R$ 100,00</p>
+    </div>
+
+    <div class="produto">
+      <h3>Produto 2</h3>
+      <p>R$ 150,00</p>
+    </div>
+
+    <div class="produto">
+      <h3>Produto 3</h3>
+      <p>R$ 1.000,00</p>
+    </div>
+
+    <div class="produto">
+      <h3>Produto 4</h3>
+      <p>R$ 10.000,00</p>
+    </div>
+  </div>
+
+</body>
+</html>

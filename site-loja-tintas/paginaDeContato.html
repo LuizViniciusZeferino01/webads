@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página de Contato</title>
+  <style>
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f9; /* Cor de fundo clara */
+      color: #333; /* Texto escuro */
+    }
+
+    header {
+      background: #4CAF50; /* Verde */
+      color: white; /* Texto branco */
+      padding: 10px 20px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background: white; /* Fundo branco */
+      border-radius: 8px; /* Bordas arredondadas */
+    }
+
+    h2, h3 {
+      text-align: center;
+    }
+
+    .info {
+      margin-bottom: 20px;
+    }
+
+    .info p {
+      margin: 8px 0;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column; /* Elementos empilhados */
+    }
+
+    form input, form textarea, form button {
+      margin: 10px 0; /* Espaço entre os elementos */
+      padding: 10px; /* Espaçamento interno */
+      border: 1px solid #ccc; /* Borda cinza */
+      border-radius: 5px; /* Bordas arredondadas */
+    }
+
+    form button {
+      background: #4CAF50; /* Verde */
+      color: white; /* Texto branco */
+      cursor: pointer; /* Cursor indicando botão */
+      transition: background 0.3s ease; /* Animação ao passar o mouse */
+    }
+
+    form button:hover {
+      background: #45a049; /* Verde mais escuro ao passar o mouse */
+    }
+
+    .chat {
+      margin-top: 20px;
+      border: 1px solid #ccc; /* Borda cinza */
+      border-radius: 8px; /* Bordas arredondadas */
+      height: 200px; /* Altura fixa */
+      overflow-y: auto; /* Rolagem vertical se necessário */
+      padding: 10px; /* Espaçamento interno */
+      background: #f9f9f9; /* Fundo mais claro */
+    }
+
+
+    .chat p {
+      margin: 10px 0;
+    }
+
+ 
+    .chat p em {
+      color: #999; /* Texto cinza claro */
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Contato</h1>
+</header>
+
+<div class="container">
+
+  <h2>Entre em contato</h2>
+  <div class="info">
+    <p><strong>Telefone:</strong> (11) 99999-9999</p>
+    <p><strong>Email:</strong> contato@exemplo.com</p>
+    <p><strong>Endereço:</strong> Rua Fictícia, 123, São Paulo - SP</p>
+  </div>
+
+  <h3>Formulário de Contato</h3>
+  <form action="#">
+    <input type="text" placeholder="Seu Nome" required>
+    <input type="email" placeholder="Seu Email" required>
+    <textarea rows="4" placeholder="Sua Mensagem" required></textarea>
+    <button type="submit">Enviar</button>
+  </form>
+
+  <h3>Chat Fictício</h3>
+  <div class="chat">
+    <p><strong>Suporte:</strong> Olá! Como posso te ajudar?</p>
+    <p><strong>Você:</strong> Gostaria de mais informações sobre os serviços.</p>
+  </div>
+
+</div>
+
+</body>
+</html>

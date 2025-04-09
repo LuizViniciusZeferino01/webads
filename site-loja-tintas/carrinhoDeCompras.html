@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Carrinho de Compras</title>
+  <style>
+
+    body {
+      font-family: Arial, sans-serif;  /* Define a fonte usada na página */
+      background-color: #f2f2f2;     /* Cor de fundo da página */
+      margin: 0;
+      padding: 0;                   /* Espaço interno ao redor do conteúdo */
+    }
+
+    h1 {
+      text-align: center;              /* Centraliza o título */
+      margin-bottom: 20px;             /* Espaço abaixo do título */
+      background-color: aqua;
+      padding: 20px;
+    }
+
+    .carrinho {
+      max-width: 800px;                /* Largura máxima do carrinho */
+      margin: auto;                    /* Centraliza na página */
+      background-color: #fff;          /* Cor de fundo branca */
+      padding: 20px;                   /* Espaço interno do carrinho */
+      border-radius: 8px;              /* Arredonda os cantos */
+    }
+
+    .produto {
+      display: flex;                   /* Usa flexbox para alinhar os elementos */
+      align-items: center;            /* Alinha verticalmente */
+      justify-content: space-between; /* Espaço entre os elementos */
+      border-bottom: 1px solid #ddd;  /* Linha separando produtos */
+      padding: 10px 0;                /* Espaçamento interno */
+    }
+
+    .produto img {
+      width: 80px;                    /* Largura da imagem */
+      height: 80px;                   /* Altura da imagem */
+      border-radius: 5px;             /* Canto arredondado */
+    }
+
+    .info {
+      flex: 1;                        /* Ocupa o restante do espaço */
+      margin-left: 20px;              /* Espaço entre imagem e texto */
+    }
+
+    .preco {
+      font-weight: bold;              /* Deixa o preço em negrito */
+      color: green;                   /* Cor verde para o preço */
+    }
+
+    .total {
+      text-align: right;              /* Alinha o total à direita */
+      margin-top: 20px;               /* Espaço acima do total */
+      font-size: 20px;                /* Tamanho da fonte do total */
+      font-weight: bold;              /* Deixa o total em negrito */
+    }
+    
+  </style>
+</head>
+<body>
+
+  <h1>Carrinho de Compras</h1>
+
+  <div class="carrinho">
+    
+    <div class="produto">
+      <img src="Imagens/vermelho.png" alt="Produto 1">
+      <div class="info">
+        <p>Produto 1</p>
+        <p class="preco">R$ 5.000,00</p>
+      </div>
+      <p>Qtd: 1</p>
+    </div>
+
+    <div class="produto">
+      <img src="Imagens/sedan.png" alt="Produto 2">
+      <div class="info">
+        <p>Produto 2</p>
+        <p class="preco">R$ 30.000,00</p>
+      </div>
+      <p>Qtd: 2</p>
+    </div>
+
+    <div class="produto">
+      <img src="Imagens/bmw.png" alt="Produto 3">
+      <div class="info">
+        <p>Produto 3</p>
+        <p class="preco">R$ 70.000,00</p>
+      </div>
+      <p>Qtd: 1</p>
+    </div>
+
+    <div class="total">
+      Total: R$ 15.000,00
+    </div>
+
+  </div>
+
+</body>
+</html>

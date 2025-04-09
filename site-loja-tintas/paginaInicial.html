@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Pagina Inicial</title>
+  <style>
+    
+    body {
+      font-family: Arial, sans-serif; /* Usa a fonte Arial se disponível */
+      margin: 0;
+      padding: 0;
+    }
+
+    .titulo{
+      background-color: brown;
+      padding: 10px 20px;
+      text-align: center;
+    }
+
+   
+    h1, h2 {
+      text-align: center; /* Alinha o texto no centro */
+    }
+
+    
+    .linha {
+      display: flex;           /* Usa flexbox para alinhar os itens */
+      justify-content: center; /* Centraliza os itens na horizontal */
+      gap: 10px;               /* Espaço entre os itens */
+      margin: 10px;            /* Espaço fora da linha */
+    }
+
+    
+    .caixa {
+      border: 1px solid gray;  /* Borda fina e cinza */
+      padding: 10px;           /* Espaço interno entre o conteúdo e a borda */
+      width: 150px;            /* Largura fixa da caixinha */
+      text-align: center;      /* Centraliza o texto dentro da caixinha */
+    }
+
+  </style>
+</head>
+<body>
+
+    <div class="titulo">
+        <h1>Minha Loja</h1>
+    </div>
+  
+
+  <h2>Categorias</h2>
+  <div class="linha">
+    <div class="caixa">
+      <p>Banheiro</p>
+    </div>
+    <div class="caixa">
+      <p>Cozinha</p>
+    </div>
+  </div>
+
+  <h2>Produtos</h2>
+  <div class="linha">
+    <div class="caixa">
+      <p>Produto 1</p>
+      <p>R$ 99,00</p>
+    </div>
+    <div class="caixa">
+      <p>Produto 2</p>
+      <p>R$ 120,00</p>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Detalhes do Produto</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif; /* Define a fonte principal da página */
+      margin: 0;                      /* Remove margem padrão do navegador */
+      padding: 20;                  /* Espaço interno ao redor do conteúdo */
+      background-color: #eeeeee;      /* Cor de fundo clara da página */
+    }
+
+    .container {
+      max-width: 800px;              /* Largura máxima da área do conteúdo */
+      margin: auto;                  /* Centraliza o container na página */
+      background-color: #fff;        /* Fundo branco para destaque */
+      padding: 20px;                 /* Espaçamento interno */
+      border-radius: 10px;           /* Arredonda os cantos do container */
+    }
+
+    .imagem-produto {
+      width: 100%;                   /* A imagem ocupa toda a largura do container */
+      max-height: 400px;             /* Limita a altura máxima da imagem */
+      border-radius: 8px;            /* Arredonda os cantos da imagem */
+      margin-bottom: 20px;           /* Espaço abaixo da imagem */
+    }
+
+    h1 {
+      padding: 20px;
+      text-align: center;
+      margin-top: 0;                 /* Remove o espaço acima do título */
+    }
+
+    .preco {
+      color: green;                  /* Cor verde para o preço */
+      font-size: 24px;               /* Tamanho da fonte do preço */
+      margin: 10px 0;                /* Espaço acima e abaixo do preço */
+    }
+
+    .descricao {
+      font-size: 16px;               /* Tamanho da fonte do texto descritivo */
+      line-height: 1.6;              /* Espaço entre as linhas para melhor leitura */
+    }
+
+    .botao-comprar {
+      display: inline-block;         /* Permite aplicar padding e margin no link */
+      margin-top: 20px;              /* Espaço acima do botão */
+      padding: 10px 20px;            /* Espaço interno do botão (vertical e horizontal) */
+      background-color: #28a745;     /* Cor de fundo verde */
+      color: white;                  /* Cor do texto branca */
+      border-radius: 5px;            /* Arredonda os cantos do botão */
+      cursor: pointer;               /* Mostra a "mãozinha" ao passar o mouse */
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <img class="imagem-produto" src="Imagens/carro.png" alt="carro">
+    
+    <h1>Carro</h1>
+
+    <p class="preco">R$ 15.000,90</p>
+
+    <p class="descricao">
+      Esse é um toyta corola 2010 1.5 com motor aspirado e suspensões independentes. Veiculo otimo para passeios em familia.
+    </p>
+
+    <a href="#" class="botao-comprar">Comprar Agora</a>
+  </div>
+
+</body>
+</html>
