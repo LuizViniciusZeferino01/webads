@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <STYle>
+        body{
+          height: 100svh;
+          background-color: aqua;       
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+    </STYle>
+<body>
+    <div class="aqui">
+        
+        <label for="min">Minimo</label>
+        <input id=" min" type="text" value="10">
+        <label for="max">Maximo</label>
+        <input id=" max" type="text" value="20" >
+
+
+        <p id="nrand">Random Number</p>
+       
+display
+        <button>Random</button>
+    </div>
+
+    
+
+    <script>
+        let i = 0 
+        let button = document.querySelector("button");
+        let resultado = document.querySelector("#nrand")
+        
+
+        document.addEventListener("click", ()=>{
+            resultado.innerHTML=Math.random()
+            delta= Number(max.value) - Number(min.value)
+            n=(delta*Math.random()) + Number(min.value)
+            nrand.innerHTML=Math.trunc(n)
+        })
+    </script>
+</body>
+</html>
