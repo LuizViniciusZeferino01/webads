@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exibindo Tipos de Dados</title>
+</head>
+<body>
+
+    <p id="pString"></p>
+    <p id="pNumber"></p>
+    <p id="pBoolean"></p>
+    <p id="pUndefined"></p>
+    <p id="pNull"></p>
+    <p id="pArray"></p>
+    <p id="pObjeto"></p>
+
+    <p id="result1"></p>
+    <p id="result2"></p>
+    <p id="result3"></p>
+    <p id="result4"></p>
+    <p id="result5"></p>
+    <p id="result6"></p>
+
+    <script>
+        let varString = "João"
+        let varNumber = 25
+        let varBoolean = 10 < 11
+        let varUndefined
+        let varNull = null
+        let varArray = [4]
+        let varObjeto = { nome: "Luiz" }
+
+        document.getElementById("pString").innerHTML = `O tipo de varString é: ${typeof varString} e o valor é: ${varString}`
+        document.getElementById("pNumber").innerHTML = `O tipo de varNumber é: ${typeof varNumber} e o valor é: ${varNumber}`
+        document.getElementById("pBoolean").innerHTML = `O tipo de varBoolean é: ${typeof varBoolean} e o valor é: ${varBoolean}`
+        document.getElementById("pUndefined").innerHTML = `O tipo de varUndefined é: ${typeof varUndefined} e o valor é: ${varUndefined}`
+        document.getElementById("pNull").innerHTML = `O tipo de varNull é: ${typeof varNull} e o valor é: ${varNull}`
+        document.getElementById("pArray").innerHTML = `O tipo de varArray é: ${typeof varArray} e o valor é: ${varArray}`
+        document.getElementById("pObjeto").innerHTML = `O tipo de varObjeto é: ${typeof varObjeto} e o valor é: ${JSON.stringify(varObjeto)}`
+
+        let result1 = varString + varNumber
+        let result2 = varBoolean * varNumber
+        let result3 = varString + varBoolean
+        let result4 = varString - varNumber
+        let result5 = varNumber * varBoolean
+        let result6 = varString * varNumber
+
+        console.log("Resultado 1 (string + number):", result1)
+        console.log("Resultado 2 (boolean * number):", result2)
+        console.log("Resultado 3 (string + boolean):", result3)
+        console.log("Resultado 4 (string - number):", result4)
+        console.log("Resultado 5 (number * boolean):", result5)
+        console.log("Resultado 6 (string * number):", result6)
+
+        document.getElementById("result1").innerHTML = `Resultado 1 (string + number): ${result1} - A string é concatenada ao número.`
+        document.getElementById("result2").innerHTML = `Resultado 2 (boolean * number): ${result2} - O valor booleano 'true' é convertido para 1, e a multiplicação resulta em 25.`
+        document.getElementById("result3").innerHTML = `Resultado 3 (string + boolean): ${result3} - O booleano 'true' é convertido para 'true' e concatenado à string.`
+        document.getElementById("result4").innerHTML = `Resultado 4 (string - number): ${result4} - Não é possível subtrair uma string de um número, o resultado é NaN (Not a Number).`
+        document.getElementById("result5").innerHTML = `Resultado 5 (number * boolean): ${result5} - O booleano 'true' é convertido para 1, e a multiplicação resulta em 25.`
+        document.getElementById("result6").innerHTML = `Resultado 6 (string * number): ${result6} - Não é possível multiplicar uma string por um número, o resultado é NaN.`
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O que é JavaScript ?</title>
+</head>
+<body>
+    <h1 id="title">O que é JavaScript ?</h1>
+    <p id="criacaoJS">
+        JavaScript foi criado em 1995 por Brendan Eich, em apenas 10 dias, para o Netscape Navigator. A ideia era adicionar interatividade às páginas da web, como validação de formulários, animações e outros recursos que rodassem no navegador, sem depender de servidores.
+    </p>
+    <p id="execucao"> Navegador: JavaScript é interpretado pelo engine do navegador como V8 no chrome.</p>
+    <p id="execucaoServ"> Servidor: Com plataformas como Node.js, JavaScript é utilizado para tarefas como acessar bancos de dados, processar requisições</p>
+    <p id="sandbox"> O sandbox é um ambiente isolado que protege o sistema do usuário contra scripts maliciosos. Ele restringe o acesso do JavaScript à máquina local, permitindo interação apenas com o DOM e APIs controladas pelo navegador.</p>
+    <p id="objetosLocais"> 
+        Document: Manipula a página (ex.: document.getElementById).
+
+        Console: Exibe mensagens de depuração no console do navegador (ex.: console.log).
+        
+        Alert: Mostra uma caixa de diálogo com mensagem (ex.: alert('Olá!')).</p>
+        <p id="hora"></p>
+    <script>
+        console.log("Olá Mundo!")
+        window.alert("Sai fora!!!!!!!!")
+        const agora = new Date()
+        const horaAtual = agora.toLocaleTimeString()
+        document.getElementById("hora").innerHTML = `Hora atual: ${horaAtual}`
+    </script>
+</body>
+</html>
