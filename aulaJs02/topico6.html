@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Local storage é um local para armazenamento de dados</h1>
+    <p>O local storage é um local para armazenamento de dados no formato chave valor por exemplo</p>
+
+    <code>
+        "chave1", "valor1"
+        "nome", "carlos"
+        "nome", "carlos"
+    </code>
+
+    <label for="nameInput">Nome</label>
+    <input type="text" id="nameInput" placeholder="Digite seu nome">
+    <br>
+    <input type="text" id="email" placeholder="email">
+    <label for="email">Email</label>
+
+    <button id="saveButton">Salvar</button>
+    <p id="greeting"></p>
+
+    <script>
+        let nameInput = document.getElementById("nameInput")
+        let saveButton= document.getElementById("saveButton")
+        let msg= document.getElementById("greeting")
+
+        function salvarNome(
+            dados=`{nome:nameInput.value, 
+                    email:email.value}`
+            localStorage.length // não sobcreve 
+            nameInput.value
+            localStorage.setItem("dados", JSON.stringify(dados)) // transorme em Json
+            console.log(dados.nome)
+        )
+
+        // ferramenta de desenvolvddor -> aplication
+    </script>
+</body>
+</html>

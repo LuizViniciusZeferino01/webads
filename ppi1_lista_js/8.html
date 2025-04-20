@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colunas Coloridas com Hexadecimal</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .instructions {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .column-container {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .columns {
+            display: flex;
+            width: 100%;
+            height: 300px;
+        }
+
+        .column {
+            width: 100%;
+            height: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        .color-hex {
+            padding: 10px 0;
+            font-family: monospace;
+            font-size: 14px;
+            background-color: white;
+            border: 1px solid #ddd;
+            margin-top: 5px;
+        }
+
+        .column:nth-child(1) {
+            background-color: #FF5252;
+        }
+        .column:nth-child(2) {
+            background-color: #FFEB3B;
+        }
+        .column:nth-child(3) {
+            background-color: #4CAF50;
+        }
+        .column:nth-child(4) {
+            background-color: #2196F3;
+        }
+        .column:nth-child(5) {
+            background-color: #9C27B0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="instructions">Pressione a tecla ESPAÇO para mudar as cores aleatoriamente</div>
+        <div class="columns">
+            <div class="column-container">
+                <div class="column" id="column1"></div>
+                <div class="color-hex" id="hex1">#FF5252</div>
+            </div>
+            <div class="column-container">
+                <div class="column" id="column2"></div>
+                <div class="color-hex" id="hex2">#FFEB3B</div>
+            </div>
+            <div class="column-container">
+                <div class="column" id="column3"></div>
+                <div class="color-hex" id="hex3">#4CAF50</div>
+            </div>
+            <div class="column-container">
+                <div class="column" id="column4"></div>
+                <div class="color-hex" id="hex4">#2196F3</div>
+            </div>
+            <div class="column-container">
+                <div class="column" id="column5"></div>
+                <div class="color-hex" id="hex5">#9C27B0</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF'
+            let color = '#'
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)]
+            }
+            return color
+        }
+
+        function changeColors() {
+            for (let i = 1; i <= 5; i++) {
+                const column = document.getElementById('column' + i)
+                const hexDisplay = document.getElementById('hex' + i)
+                const randomColor = getRandomColor()
+                
+                column.style.backgroundColor = randomColor
+                hexDisplay.textContent = randomColor
+            }
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.keyCode === 32) {
+                changeColors()
+                event.preventDefault()
+            }
+        })
+
+        window.addEventListener('load', function() {
+            document.getElementById('hex1').textContent = "#FF5252"
+            document.getElementById('hex2').textContent = "#FFEB3B"
+            document.getElementById('hex3').textContent = "#4CAF50"
+            document.getElementById('hex4').textContent = "#2196F3"
+            document.getElementById('hex5').textContent = "#9C27B0"
+            
+            changeColors()
+        })
+    </script>
+</body>
+</html>

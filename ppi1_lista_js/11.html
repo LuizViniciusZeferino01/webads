@@ -1,0 +1,30 @@
+<body>
+    <input type="text" id="nameInput" placeholder="Digite seu nome">
+    <button id="saveButton">Salvar</button>
+    <p id="greeting"></p>
+</body>
+<script>
+    var campoNome = document.getElementById('nameInput')
+    var botaoSalvar = document.getElementById('saveButton')
+    var saudacao = document.getElementById('greeting')
+
+    window.addEventListener('load', function () {
+        var nomeSalvo = localStorage.getItem('nome')
+
+        if (nomeSalvo) {
+            saudacao.textContent = 'Olá, ' + nomeSalvo + '!'
+            campoNome.value = nomeSalvo
+        }
+    })
+
+    botaoSalvar.addEventListener('click', function () {
+        var nome = campoNome.value.trim()
+
+        if (nome !== '') {
+            localStorage.setItem('nome', nome)
+            saudacao.textContent = 'Olá, ' + nome + '!'
+        } else {
+            alert('Por favor, digite um nome!')
+        }
+    })
+</script>

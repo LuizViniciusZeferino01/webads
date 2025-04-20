@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorteio de Números</title>
+</head>
+<body>
+    <h1>Sorteio de Números</h1>
+    <p>Informe o intervalo:</p>
+    <input type="number" id="minimo" placeholder="Mínimo">
+    <input type="number" id="maximo" placeholder="Máximo">
+    <button onclick="sortear()">Sortear</button>
+    <p id="resultado"></p>
+    <ul id="numeros"></ul>
+
+    <script>
+        let numeros = []
+
+        function sortear() {
+            let minimo = parseInt(document.getElementById("minimo").value)
+            let maximo = parseInt(document.getElementById("maximo").value)
+
+            if (!minimo || !maximo || minimo >= maximo) {
+                document.getElementById("resultado").innerText = "Intervalo inválido"
+                return
+            }
+
+            let sorteado = Math.floor(Math.random() * (maximo - minimo + 1)) + minimo
+
+            let repetido = numeros.find(item => item.numero === sorteado)
+
+            if (repetido) {
+                repetido.quantidade++
+            } else {
+                numeros.push({ numero: sorteado, quantidade: 1 })
+            }
+
+            mostrarNumeros()
+            document.getElementById("resultado").innerText = `Número sorteado: ${sorteado}`
+        }
+
+        function mostrarNumeros() {
+            let lista = document.getElementById("numeros")
+            lista.innerHTML = ""
+
+            numeros.forEach(item => {
+                lista.innerHTML += `<li>${item.numero} - ${item.quantidade} vez(es)</li>`
+            })
+        }
+    </script>
+</body>
+</html>

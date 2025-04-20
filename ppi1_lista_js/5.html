@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números Primos</title>
+</head>
+<body>
+    <h1>Descubra Números Primos</h1>
+    <p>Informe o intervalo:</p>
+    <input type="number" id="inicio" placeholder="Número inicial">
+    <input type="number" id="fim" placeholder="Número final">
+    <button onclick="verificarPrimos()">Verificar</button>
+    <div id="resultadoPrimos"></div>
+
+    <script>
+        function verificarPrimos() {
+            let inicio = parseInt(document.getElementById("inicio").value);
+            let fim = parseInt(document.getElementById("fim").value);
+            let resultado = document.getElementById("resultadoPrimos");
+
+            if (!inicio || !fim || inicio > fim) {
+                resultado.innerText = "Intervalo inválido.";
+                return;
+            }
+
+            let primos = [];
+
+            for (let i = inicio; i <= fim; i++) {
+                if (isPrimo(i)) {
+                    primos.push(i);
+                }
+            }
+
+            if (primos.length > 0) {
+                resultado.innerText = "Números primos: " + primos.join(", ");
+            } else {
+                resultado.innerText = "Nenhum número primo encontrado.";
+            }
+        }
+
+        function isPrimo(num) {
+            if (num < 2) return false;
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>

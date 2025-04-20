@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Set interval</h1>
+    <p>Cadastra o intervalo de um disparo em que uma unção sera executado a cada passagem no intervalo</p>
+
+    <p>
+        funcao retorna inteiro referente ao intervalo
+    </p>
+
+    <p id="data"></p>
+    <script>
+        pdata=document.getElementById("data")
+
+        console.log(setInterval(atualizaHora,1))
+
+        function atualizaHora(){
+            d=new Date()
+
+            pdata.innerHTML = `${d.getDate()}/${d.getMonth()}/${d.getFullYear()} --`+
+            `${d.getHours()}:${d.getMinutes()}:${d.getSecunds()}:${d.getMillisecunds()}`
+        }
+
+        clearInterval(1)
+    </script>
+
+</body>
+</html>
