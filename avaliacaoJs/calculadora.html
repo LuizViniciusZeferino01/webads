@@ -65,31 +65,51 @@
     <div class="calculadora">
         <input type="text" disabled id="tela">
         <div class="botoes">
-            <button>C</button>
-            <button>&lt;</button>
-            <button>/</button>
-            <button>*</button>
-            <button>7</button>
-            <button>8</button>
-            <button>9</button>
-            <button>-</button>
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
-            <button>+</button>
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button>0</button>
-            <button>.</button>
-            <button class="igual">=</button>
+            <button onclick="limpar()">C</button>
+            <button onclick="apagar()">&lt;</button>
+            <button onclick="inserirTela('/')">/</button>
+            <button onclick="inserirTela('*')">*</button>
+            <button onclick="inserirTela('7')">7</button>
+            <button onclick="inserirTela('8')">8</button>
+            <button onclick="inserirTela('9')">9</button>
+            <button onclick="inserirTela('-')">-</button>
+            <button onclick="inserirTela('4')">4</button>
+            <button onclick="inserirTela('5')">5</button>
+            <button onclick="inserirTela('6')">6</button>
+            <button onclick="inserirTela('+')">+</button>
+            <button onclick="inserirTela('1')">1</button>
+            <button onclick="inserirTela('2')">2</button>
+            <button onclick="inserirTela('3')">3</button>
+            <button onclick="inserirTela('0')">0</button>
+            <button onclick="inserirTela('.')">.</button>
+            <button onclick="resultado()" class="igual">=</button>
         </div>
 
     </div>
 
 
     <script>
+        function inserirTela(dado) {
+            document.querySelector('#tela').value += dado
+        }
 
+        function limpar() {
+            document.querySelector('#tela').value = ''
+        }
+
+        function apagar() {
+            const tela = document.querySelector('#tela')
+            tela.value = tela.value.slice(0, -1)
+        }
+
+        function resultado() {
+            const tela = document.querySelector('#tela')
+            try{
+                tela.value = eval(tela.value)
+            } catch {
+                tela.velue = 'Error'
+            }
+        }
     </script>
 </body>
 </html>
