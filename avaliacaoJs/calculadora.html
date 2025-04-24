@@ -57,6 +57,7 @@
             grid-row: 2 / 6 ;
             height: 100%;
             grid-column: 4;
+            background-color: #313eb4;
         }
 
     </style>
@@ -65,23 +66,23 @@
     <div class="calculadora">
         <input type="text" disabled id="tela">
         <div class="botoes">
-            <button onclick="limpar()">C</button>
-            <button onclick="apagar()">&lt;</button>
-            <button onclick="inserirTela('/')">/</button>
+
+            <button onclick="inserirTela('+')">+</button>
+            <button onclick="inserirTela('-')">-</button>
             <button onclick="inserirTela('*')">*</button>
+            <button onclick="inserirTela('/')">&divide;</button>
             <button onclick="inserirTela('7')">7</button>
             <button onclick="inserirTela('8')">8</button>
             <button onclick="inserirTela('9')">9</button>
-            <button onclick="inserirTela('-')">-</button>
             <button onclick="inserirTela('4')">4</button>
             <button onclick="inserirTela('5')">5</button>
             <button onclick="inserirTela('6')">6</button>
-            <button onclick="inserirTela('+')">+</button>
             <button onclick="inserirTela('1')">1</button>
             <button onclick="inserirTela('2')">2</button>
             <button onclick="inserirTela('3')">3</button>
             <button onclick="inserirTela('0')">0</button>
             <button onclick="inserirTela('.')">.</button>
+            <button onclick="limpar()">C</button>
             <button onclick="resultado()" class="igual">=</button>
         </div>
 
@@ -95,11 +96,6 @@
 
         function limpar() {
             document.querySelector('#tela').value = ''
-        }
-
-        function apagar() {
-            const tela = document.querySelector('#tela')
-            tela.value = tela.value.slice(0, -1)
         }
 
         function resultado() {
