@@ -101,9 +101,14 @@
         function resultado() {
             const tela = document.querySelector('#tela')
             try{
-                tela.value = eval(tela.value)
+                const verificando = eval(tela.value)
+                if(!isFinite(verificando)) { 
+                    tela.value = 'Error' 
+                } else {
+                    tela.value = verificando    
+                }
             } catch {
-                tela.velue = 'Error'
+                tela.value = 'Error'
             }
         }
     </script>
