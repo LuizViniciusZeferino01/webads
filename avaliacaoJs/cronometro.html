@@ -6,6 +6,50 @@
     <title>Cronometro</title>
 </head>
 <body>
-    
+    <style>
+        body { 
+        font-family: sans-serif; 
+        text-align: center; 
+        margin-top: 50px; 
+        }
+
+        #tempo { 
+        font-size: 48px; 
+        margin-bottom: 20px; 
+        }
+
+        button { 
+        margin: 5px; 
+        padding: 10px 20px; 
+        }
+
+    </style>
+
+      
+    <div id="tempo">00:00:00</div>
+
+    <button onclick="iniciar()">Iniciar (I)</button>
+    <button onclick="pausar()">Pausar (P)</button>
+    <button onclick="parar()">Parar (T)</button>
+
+    <h3>Pausas:</h3>
+    <ul id="pausas"></ul>
+
+    <script>
+        let inicio = null;
+        let intervalo = null;
+        let pausado = false;
+        let tempoPausado = 0;
+        let pausas = [];
+
+
+
+
+
+
+
+        
+    </script>
+
 </body>
 </html>
