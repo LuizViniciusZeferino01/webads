@@ -1,55 +1,124 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cronometro</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cronômetro Estilizado</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100svh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #e3f2fd;
+      font-family: sans-serif;
+    }
+    #cronometroBox {
+      background: #455a64;
+      color: white;
+      width: 70%;
+      max-width: 800px;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      text-align: center;
+    }
+    #tempo {
+      font-size: 64px;
+      margin-bottom: 30px;
+    }
+    button {
+      font-size: 20px;
+      padding: 10px 20px;
+      margin: 10px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    #pausasList {
+      margin-top: 20px;
+      background: #cfd8dc;
+      color: black;
+      padding: 10px;
+      border-radius: 10px;
+      max-height: 150px;
+      overflow-y: auto;
+      text-align: left;
+    }
+  </style>
 </head>
 <body>
-    <style>
-        body { 
-        font-family: sans-serif; 
-        text-align: center; 
-        margin-top: 50px; 
-        }
+  <div id="cronometroBox">
+    <div id="tempo">00:00:000</div>
+    <button id="botaoIniciar">Iniciar</button>
+    <button id="botaoZerar">Zerar</button>
+    <div id="pausasList">
+      <h3>Pausas:</h3>
+      <ul id="listaPausas"></ul>
+    </div>
+  </div>
 
-        #tempo { 
-        font-size: 48px; 
-        margin-bottom: 20px; 
-        }
+  <script>
 
-        button { 
-        margin: 5px; 
-        padding: 10px 20px; 
-        }
+    let inicio = null;
+    let intervalo = null;
+    let tempoPausado = 0;
 
-    </style>
+    const tempo = document.getElementById('tempo');
+    const botaoIniciar = document.getElementById('botaoIniciar');
+    const botaoZerar = document.getElementById('botaoZerar');
+    const listaPausas = document.getElementById('listaPausas');
 
+    botaoIniciar.addEventListener('click', alternarInicioPausa);
+    botaoZerar.addEventListener('click', zerarCronometro);
+
+    document.addEventListener('keydown', (e) => {
+      if (e.code === 'Space') alternarInicioPausa();
+      if (e.key.toLowerCase() === 'z') zerarCronometro();
+    });
+
+    function alternarInicioPausa() {
+      if (intervalo === null) {
+        botaoIniciar.innerText = 'Pausar';
+        inicio = Date.now() - tempoPausado;
+        intervalo = setInterval(atualizarTempo, 10);
+      } else {
+        botaoIniciar.innerText = 'Iniciar';
+        clearInterval(intervalo);
+        intervalo = null;
+        tempoPausado = Date.now() - inicio;
+        adicionarPausa();
+      }
+    }
+
+    function atualizarTempo() {
+      const agora = Date.now();
+      const tempoDecorrido = agora - inicio;
+      const tempoFormatado = new Date(tempoDecorrido);
       
-    <div id="tempo">00:00:00</div>
+      tempo.innerText = `${tempoFormatado.getMinutes().toString().padStart(2, '0')}:` +
+                        `${tempoFormatado.getSeconds().toString().padStart(2, '0')}:` +
+                        `${tempoFormatado.getMilliseconds().toString().padStart(3, '0')}`;
+    }
 
-    <button onclick="iniciar()">Iniciar (I)</button>
-    <button onclick="pausar()">Pausar (P)</button>
-    <button onclick="parar()">Parar (T)</button>
+    function adicionarPausa() {
+      const li = document.createElement('li');
+      li.textContent = tempo.innerText;
+      listaPausas.appendChild(li);
+    }
 
-    <h3>Pausas:</h3>
-    <ul id="pausas"></ul>
-
-    <script>
-        let inicio = null;
-        let intervalo = null;
-        let pausado = false;
-        let tempoPausado = 0;
-        let pausas = [];
-
-
-
-
-
-
-
-        
-    </script>
-
+    function zerarCronometro() {
+      clearInterval(intervalo);
+      intervalo = null;
+      inicio = null;
+      tempoPausado = 0;
+      tempo.innerText = '00:00:000';
+      listaPausas.innerHTML = '';
+      botaoIniciar.innerText = 'Iniciar';
+    }
+  </script>
 </body>
 </html>
