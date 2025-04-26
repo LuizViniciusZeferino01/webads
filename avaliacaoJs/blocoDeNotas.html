@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bloco de Notas</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+
+  <div class="container py-5">
+    <h1 class="text-center mb-4">Bloco de Notas</h1>
+
+    <div class="card mb-4">
+      <div class="card-body">
+        <input type="hidden" id="idNota">
+        <div class="mb-3">
+          <label for="titulo" class="form-label">Título</label>
+          <input type="text" class="form-control" id="titulo" placeholder="Digite o título da nota">
+        </div>
+        <div class="mb-3">
+          <label for="conteudo" class="form-label">Conteúdo</label>
+          <textarea class="form-control" id="conteudo" placeholder="Escreva sua nota aqui..."></textarea>
+        </div>
+        <button class="btn btn-primary" id="btnSalvar">Salvar</button>
+        <button class="btn btn-secondary" id="btnCancelar">Cancelar</button>
+      </div>
+    </div>
+
+    <div class="row" id="notasLista"></div>
+  </div>
+
+  <script>
+    const btnSalvar = document.querySelector("#btnSalvar");
+    const btnCancelar = document.querySelector("#btnCancelar");
+
+    btnSalvar.addEventListener("click", salvaNota);
+    btnCancelar.addEventListener("click", limpaFormulario);
+
+    function salvaNota() {
+      const titulo = document.querySelector("#titulo").value.trim();
+      const conteudo = document.querySelector("#conteudo").value.trim();
+      const id = document.querySelector("#idNota").value;
+
+      if (!titulo || !conteudo) {
+        alert("Preencha todos os campos!");
+        return;
+      }
+
+      let notas = JSON.parse(localStorage.getItem("notas")) || [];
+      const novaNota = { titulo, conteudo };
+
+      if (id === "") {
+        notas.push(novaNota);
+      } else {
+        notas[id] = novaNota;
+      }
+
+      localStorage.setItem("notas", JSON.stringify(notas));
+      renderizarNotas();
+      limpaFormulario();
+    }
+
+    function limpaFormulario() {
+      document.querySelector("#idNota").value = "";
+      document.querySelector("#titulo").value = "";
+      document.querySelector("#conteudo").value = "";
+    }
+
+    function editarNota(index) {
+      const notas = JSON.parse(localStorage.getItem("notas")) || [];
+      const nota = notas[index];
+
+      document.querySelector("#idNota").value = index;
+      document.querySelector("#titulo").value = nota.titulo;
+      document.querySelector("#conteudo").value = nota.conteudo;
+    }
+
+    function excluirNota(index) {
+      if (confirm("Deseja realmente excluir esta nota?")) {
+        let notas = JSON.parse(localStorage.getItem("notas")) || [];
+        notas.splice(index, 1);
+        localStorage.setItem("notas", JSON.stringify(notas));
+        renderizarNotas();
+      }
+    }
+
+    function renderizarNotas() {
+      const lista = document.querySelector("#notasLista");
+      lista.innerHTML = "";
+      const notas = JSON.parse(localStorage.getItem("notas")) || [];
+
+      notas.forEach((nota, index) => {
+        lista.innerHTML += `
+          <div class="col-md-4 mb-3">
+            <div class="card h-100">
+              <div class="card-body" onclick="editarNota(${index})" style="cursor: pointer;">
+                <h5 class="card-title">${nota.titulo}</h5>
+                <p class="card-text">${nota.conteudo.substring(0, 100)}...</p>
+              </div>
+              <div class="card-footer d-flex justify-content-between">
+                <button class="btn btn-sm btn-warning" onclick="editarNota(${index})">Editar</button>
+                <button class="btn btn-sm btn-danger" onclick="excluirNota(${index})">Excluir</button>
+              </div>
+            </div>
+          </div>`;
+      });
+    }
+
+    window.onload = renderizarNotas;
+  </script>
+</body>
+</html>
